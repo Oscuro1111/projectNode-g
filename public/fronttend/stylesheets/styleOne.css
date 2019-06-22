@@ -10,12 +10,12 @@ body{
 }
 
 header{ background-color:#9D0BF5;}
-#menus{ background-color:#080808;}
-#sideBar{ background-color:#8F7AD5;}
-#main-container{ background-color:#C6E1F2}
+div#menus{ background-color:#080808;}
+div#sideBar{ background-color:#8F7AD5;}
+div#main-container{ background-color:#C6E1F2}
 footer{ background-color:#4D575E;}
 
-#menus a{ 
+nav#menus a{ 
     text-decoration: none;
     color:white;
     padding:5px;
