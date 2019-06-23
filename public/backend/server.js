@@ -14,6 +14,19 @@ function loadFileSync(path){
     }
 } 
 
+
+function extention(req){
+
+        let temp=''
+         let num= req.url.indexOf('.');
+         
+         for(let x=num;x<req.url.length;x++){ 
+                  temp+=req.url[x];
+         }          
+          return temp;
+}
+
+
  var Home;
   fs.readFile("../index.html",function(err,data){
                if(err){
@@ -34,11 +47,17 @@ function main(){
      http.createServer(function(req,res){
                 
             console.log("Requested File:"+req.url);
-
-            if(req.url!="/"){
-              switch(req.url){
-                   case req.url.match(/.css$/g):
+           
+           
+            if(req.url!='/'){
+          
+           
+            let exp = extention(req);
+           
+              switch(exp){
+                   case '.css':
                   {
+                        
                         let data=loadFileSync("../fronttend/stylesheets"+req.url);                
                         res.writeHead(200,{"Content-Type":"text/css"});
                         res.write(data);
@@ -46,7 +65,7 @@ function main(){
                    }
                    break;
 
-                   case req.url.match(/.html$/g):
+                   case '.html':
                     {
                        let data =loadFileSync("../fronttend/htmlSrc"+req.url);
                        res.writeHead(200,{"Content-Type":"text/html"});
@@ -55,7 +74,7 @@ function main(){
                     }
                        break;
 
-                    case req.url.match(/.js$/g):
+                    case '.js':
                    {
                         let data=loadFileSync("../fronttend/jsSrc"+req.url);                
                         res.writeHead(200,{"Content-Type":"text/javascript"});
@@ -65,6 +84,7 @@ function main(){
                         break; 
                    
                   default: 
+
                          res.writeHead(200,{"Content-Type":"text/html"});
                          res.write("<h1>404:Not Found</h1>");
                          res.end();
