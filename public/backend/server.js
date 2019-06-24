@@ -1,6 +1,8 @@
  var fs   =require('fs');
  var http = require('http');
+ var nStatic = require('./modules/node_modules/node-static');
 
+ var fileServer = new nStatic.Server('../..');
 
  var fileCache={}; 
 
@@ -58,7 +60,7 @@ function main(){
                    case '.css':
                   {
                         
-                        let data=loadFileSync("../fronttend/stylesheets"+req.url);                
+                        let data=loadFileSync("../.."+req.url);                
                         res.writeHead(200,{"Content-Type":"text/css"});
                         res.write(data);
                         res.end();
@@ -67,7 +69,7 @@ function main(){
 
                    case '.html':
                     {
-                       let data =loadFileSync("../fronttend/htmlSrc"+req.url);
+                       let data =loadFileSync("../.."+req.url);
                        res.writeHead(200,{"Content-Type":"text/html"});
                        res.write(data);
                        res.end();
@@ -76,13 +78,18 @@ function main(){
 
                     case '.js':
                    {
-                        let data=loadFileSync("../fronttend/jsSrc"+req.url);                
-                        res.writeHead(200,{"Content-Type":"text/javascript"});
-                        res.write(data);
-                        res.end();
+                        fileServer.serve(req,res); 
                    }
                         break; 
-                   
+
+
+                  case ".jpg":
+        
+                    {
+                               fileServer.serve(req,res);    
+                    }
+                
+                  break; 
                   default: 
 
                          res.writeHead(200,{"Content-Type":"text/html"});
