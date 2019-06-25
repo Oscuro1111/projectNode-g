@@ -2,7 +2,7 @@
 	"name": "projectnode",
 	"version": "1.0.0",
 	"scripts": {
-		"start": "server.js"
+		"start": "node server.js"
 	},
 	"author": "Oscuro Smith"
 }
