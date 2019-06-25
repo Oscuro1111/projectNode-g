@@ -12,7 +12,7 @@ div#sideBar {
 	background-color: #4a4a4f;
 }
 div#main-container {
-	background-color: #c6e1f2;
+	background-color: #fdfdfd;
 }
 footer {
 	background-color: #4d575e;
@@ -21,7 +21,7 @@ footer {
 h2 {
 	font-size: 40px;
     padding: 20px;
-    margin-bottom: -26px;
+    margin-bottom: -10px;
 	box-shadow: 5px 5px 3px 3px #4a4a4f;
     background-color: rgb(73, 180, 199);
     
@@ -39,9 +39,14 @@ body {
 	text-align: center;
 	color: #0a0000;
 }
-a {
-    color: white;
+div>a {
+    color: rgb(88, 148, 245);
     text-decoration: none;
+}
+#index a{
+	text-decoration:none;
+	color:black ;
+
 }
 #Author {
 	font-size: 24px;
@@ -155,7 +160,14 @@ img{
 }
 p{
     display:block;
-    background-color: #a3c2d6;
     text-align: justify;
     padding:5px;
+}
+
+div#main-container{
+	background: #d1e1ee;
+}
+strong,b{
+	margin:13px;
+	background-color:#95aadd; 
 }
