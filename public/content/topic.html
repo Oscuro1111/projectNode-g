@@ -109,10 +109,12 @@
 		}
 		
 			$("a#contentIndex").focus(function($event){
+				$event.preventDefault();
 				$("div#sideBar").css({"display":"block","width":"600px"});
 				
 			}).click(
 			function($event){
+				$event.preventDefault();
 				$("div#sideBar").css({"display":"none"});
 			});
 	</script>
