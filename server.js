@@ -1,8 +1,8 @@
 var fs = require('fs');
 var http = require('http');
-var nStatic = require('./modules/node_modules/node-static');
+var nStatic = require('./public/backend/modules/node_modules/node-static/lib/node-static');
 
-var fileServer = new nStatic.Server('../..');
+var fileServer = new nStatic.Server(__dirname);
 
 var fileCache = {};
 
@@ -19,7 +19,7 @@ function loadFileSync(path) {
 
 function extention(req) {
 
-    let temp = ''
+    let temp = '';
     let num = req.url.indexOf('.');
 
     for (let x = num; x < req.url.length; x++) {
@@ -30,7 +30,7 @@ function extention(req) {
 
 
 var Home;
-fs.readFile("../index.html", function (err, data) {
+fs.readFile("./index.html", function (err, data) {
     if (err) {
         throw err;
     }
@@ -60,7 +60,7 @@ function main() {
                 case '.css':
                     {
 
-                        let data = loadFileSync("../.." + req.url);
+                        let data = loadFileSync(__dirname + req.url);
                         res.writeHead(200, { "Content-Type": "text/css" });
                         res.write(data);
                         res.end();
@@ -69,7 +69,7 @@ function main() {
 
                 case '.html':
                     {
-                        let data = loadFileSync("../.." + req.url);
+                        let data = loadFileSync(__dirname + req.url);
                         res.writeHead(200, { "Content-Type": "text/html" });
                         res.write(data);
                         res.end();
@@ -81,14 +81,10 @@ function main() {
                         fileServer.serve(req, res);
                     }
                     break;
-
-
                 case ".jpg":
-
                     {
                         fileServer.serve(req, res);
                     }
-
                     break;
                 default:
 
@@ -97,13 +93,11 @@ function main() {
                     res.end();
                     break;
             }
-
         } else {
             res.writeHead(200, { "Content-Type": "text/html" });
             res.write(Home);
             res.end();
         }
-
     }).listen(PORT);
 
 }

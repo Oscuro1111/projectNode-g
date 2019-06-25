@@ -1,2 +1,2 @@
-web: node ./public/backend/server.js
+web: node server.js
 
