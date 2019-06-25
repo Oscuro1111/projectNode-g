@@ -171,3 +171,6 @@ strong,b{
 	margin:13px;
 	background-color:#95aadd; 
 }
+div#sideBar{
+  display:none;
+}

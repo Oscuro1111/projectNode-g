@@ -15,9 +15,9 @@
 	</header>
 
 	<nav id="menus">
-		<a href="#">SegMent</a>
-		<a href="#">Fault</a>
-		<a href="#">Web</a>
+		<a href="#" id="contentIndex">Content List</a>
+		<a href="#">NULL</a>
+		<a href="#">NULL</a>
 	</nav>
 
 	<div id="sideBar">
@@ -106,7 +106,14 @@
 					break;
 				}
             }
-
 		}
+		
+			$("a#contentIndex").mouseover(function($event){
+				$("div#sideBar").css({"display":"block","width":"600px"});
+				
+			}).click(
+			function($event){
+				$("div#sideBar").css({"display":"none"});
+			});
 	</script>
 </body>

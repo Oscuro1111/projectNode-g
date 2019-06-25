@@ -45,7 +45,7 @@ var PORT = process.env.PORT||8080;
 
 function main() {
 
-    console.log(" Server status:Running..." + "\nhost:localhost Port:8080");
+    console.log(" Server status:Running..." + "\nhost:localhost on Port:"+PORT);
     http.createServer(function (req, res) {
 
         console.log("Requested File:" + req.url);
