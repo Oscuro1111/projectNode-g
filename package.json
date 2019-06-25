@@ -1,0 +1,8 @@
+{
+	"name": "projectNode",
+	"version": "1.0.0",
+	"scripts": {
+		"start": "node ./public/backend/server.js"
+	},
+	"author": "Oscuro Smith"
+}
