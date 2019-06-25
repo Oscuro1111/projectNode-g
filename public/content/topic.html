@@ -109,11 +109,11 @@
             }
 		}
 		
-			$("a#contentIndex").on("click",function($event){
+			$("a#contentIndex").bind("mouseover",function($event){
 				$event.preventDefault();
 				$("div#sideBar").css({"display":"block","width":"600px"});
 				
-			}).on("click",
+			}).bind("click",
 			function($event){
 				$event.preventDefault();
 				$("div#sideBar").css({"display":"none"});
