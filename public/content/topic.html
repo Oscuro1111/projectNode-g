@@ -1,6 +1,7 @@
 <!DOCTYPE html>
 <head>
-	<meta charset="utf-8" />
+	<meta charset="utf-8" name="viewport" content="width=device-width,user-scalable=no"/>
+
 	<title>
 		SegFault Web
 	</title>
@@ -108,11 +109,11 @@
             }
 		}
 		
-			$("a#contentIndex").mouseover(function($event){
+			$("a#contentIndex").on("mouseover",function($event){
 				$event.preventDefault();
 				$("div#sideBar").css({"display":"block","width":"600px"});
 				
-			}).click(
+			}).on("click",
 			function($event){
 				$event.preventDefault();
 				$("div#sideBar").css({"display":"none"});
