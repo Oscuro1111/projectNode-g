@@ -1,0 +1,96 @@
+<!DOCTYPE html>
+   <head>
+       <meta charset="utf-8" />
+       <meta content="width=device-width user-scalable=no" />
+       
+       <title>
+           SegFault Web
+       </title>
+       <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
+       <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+       <link rel="stylesheet" href="../../fronttend/stylesheets/style-2.css">
+
+       <script type="text/javascript" src="../../libs/jquery.js"></script>
+   </head>
+   <body>
+
+            <header>
+                <h1>
+                    SegFault Web
+                </h1>
+            </header>
+
+            <span id="contentList">
+                <span class="w3-xlarge"><em class="fa fa-bars" id="reset"> Content</em></span>
+            </span>
+
+            <div id="main-container">
+              <!--MAIN CONTENT GOES HERE-->Main content
+            </div>
+
+            <div id="sideBar">
+                 <!--SIDE BAR-->
+                 <center><span id="content_">Content</span><br/></center>
+                 <h3><span id="title">Title</span></h3>
+                 <br />
+                 <nav id="index">
+                     <ul>
+                         <li><a href="../topic.html">Introduction</a></li>
+                         <li><a href="../topic2.html">Types of Memory </a></li>
+                     </ul>
+                 </nav>
+            </div>
+            
+            <footer>
+              <!--FOOTER-->Footer 
+            </footer>
+
+            <script type="text/javascript">
+				$("div#sideBar").css({"display":"none"});
+
+                {
+                    let ul_ = $('nav#index li');
+                    let li = $(ul_).find('a');
+                    let check = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1];
+                
+                    for (let element = 0; element < li.length; element++) {
+                        if (check == li[element].getAttribute('href')) {
+                            $(li[element]).css({ 'background-color': '#08f543', color: 'black' });
+                           // $('p#title').text($(li[element]).text());
+                            break;
+                        }
+                    }
+                }
+
+                
+		
+		$("em#reset").bind("mouseover",function($event){
+                $event.preventDefault();
+                $(this).css({"background-color":"rgb(35, 241, 35)","padding":"17px"});
+				$("div#sideBar").css({"display":"block","width":"400px"});
+							
+			})
+			
+			$("em#reset").bind("click",
+			function($event){
+                $event.preventDefault();
+                $(this).css({"background-color":""});
+				$("div#sideBar").css({"display":"none"});
+			});
+            
+            //Touch Event handler
+         function overpointer(event){
+             
+            event.preventDefault();
+
+             $(this).css({"background-color":"rgb(35, 241, 35)","padding":"17px"});
+			 $("div#sideBar").css({"display":"block","width":"400px"});
+		} 
+
+					var ele =$("em#reset");
+                    ele[0].onpointerover=overpointer;
+                    
+
+              </script>        
+   </body>
+</html>

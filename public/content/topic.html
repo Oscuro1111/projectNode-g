@@ -94,12 +94,10 @@
 		{
 			let ul_ = $('nav#index li');
 			let li = $(ul_).find('a');
-			console.log('Worked');
-			console.dir(li);
+	
 			let check = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1];
-			console.log(check, li.length);
+			
 			for (let element = 0; element < li.length; element++) {
-				console.log(li[element].getAttribute('href'));
 				if (check == li[element].getAttribute('href')) {
                     $(li[element]).css({ 'background-color': '#08f543',"color":"black" });
                     $( 'p#title' ).text($( li[element] ).text( ) );
