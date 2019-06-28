@@ -6,6 +6,7 @@
        <title>
            SegFault Web
        </title>
+
        <link rel="stylesheet" href="https://www.w3schools.com/w3css/4/w3.css">
        <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
        <link rel="stylesheet" href="../../fronttend/stylesheets/style-2.css">
@@ -26,6 +27,7 @@
 
             <div id="main-container">
               <!--MAIN CONTENT GOES HERE-->Main content
+              <p id="topicTitle"></p>
             </div>
 
             <div id="sideBar">
@@ -34,9 +36,8 @@
                  <h3><span id="title">Title</span></h3>
                  <br />
                  <nav id="index">
-                     <ul>
-                         <li><a href="../topic.html">Introduction</a></li>
-                         <li><a href="../topic2.html">Types of Memory </a></li>
+                     <ul id="INDEX">
+
                      </ul>
                  </nav>
             </div>
@@ -48,7 +49,8 @@
             <script type="text/javascript">
 				$("div#sideBar").css({"display":"none"});
 
-                {
+
+                 function setup(){
                     let ul_ = $('nav#index li');
                     let li = $(ul_).find('a');
                     let check = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1];
@@ -56,14 +58,39 @@
                     for (let element = 0; element < li.length; element++) {
                         if (check == li[element].getAttribute('href')) {
                             $(li[element]).css({ 'background-color': '#08f543', color: 'black' });
-                           // $('p#title').text($(li[element]).text());
+                           $('p#topicTitle').text($(li[element]).text());
                             break;
                         }
                     }
                 }
 
-                
-		
+
+       //Async Process
+
+
+ function loaddata(xhttp){
+
+        let index = xhttp.responseText;
+       console.log("done");
+      $('ul#INDEX').append(index);
+      setup();
+}
+         
+            function loadDoc(){
+                     var xhttp = new XMLHttpRequest();
+
+                     xhttp.onreadystatechange=function(){
+                           if(this.readyState==4&&this.status==200){
+                             console.log("Loaded Data");  
+                             loaddata(this);
+                           }
+                     }
+                     xhttp.open("GET","../ProgrammingTopics/IndexFile.text",true);
+                     xhttp.send();
+            }
+    loadDoc();
+
+
 		$("em#reset").bind("mouseover",function($event){
                 $event.preventDefault();
                 $(this).css({"background-color":"rgb(35, 241, 35)","padding":"17px"});

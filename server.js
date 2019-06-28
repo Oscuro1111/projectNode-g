@@ -1,7 +1,9 @@
 var fs = require('fs');
 var http = require('http');
+var jsdom = require('./public/backend/modules/node_modules/jsdom');
+var helperModules=require('./public/backend/modules/helperModules/indexColUpdaterModule.js');
 var nStatic = require('./public/backend/modules/node_modules/node-static/lib/node-static');
-
+var jquery = require('./public/backend/modules/node_modules/jquery');
 var fileServer = new nStatic.Server(__dirname);
 
 var fileCache = {};
@@ -57,6 +59,15 @@ function main() {
             let exp = extention(req);
 
             switch (exp) {
+
+                case '.text':
+                {
+                    let data = loadFileSync(__dirname+req.url);
+                    res.writeHead(200, {"Content-Type": "text/html"});
+                    res.write(data);
+                    res.end();
+                }
+                break;
                 case '.css':
                     {
 
@@ -101,6 +112,9 @@ function main() {
     }).listen(PORT);
 
 }
+
+
+//setTimeout(helperModules.updateIndex,100,fs,jsdom,jquery);
 
 setTimeout(main, 100);
 

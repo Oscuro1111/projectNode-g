@@ -143,7 +143,7 @@ div#sideBar{
     font-size:25px;
     padding:5px;
     width:100%;
-    
+    font-family: sans-serif;
 }
 center{
     padding:10px;
@@ -163,9 +163,13 @@ div>h3{
     border:3px solid #696d6d;
      background: #5cd4d4;
      margin-top:-7px;
+     padding:10px;
 }
 
 div#sideBar{
 color:#ffffff;
 background-color:#a805c5; 
+}
+div#sideBar a{
+    color:#fff;
 }
