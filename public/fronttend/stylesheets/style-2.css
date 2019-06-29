@@ -170,6 +170,69 @@ div#sideBar{
 color:#ffffff;
 background-color:#a805c5; 
 }
+
 div#sideBar a{
     color:#fff;
+}
+
+
+
+
+p#Author{
+    box-sizing: content-box;
+    width:500px;
+    padding:10px;
+    
+    margin-top:-33px;
+    margin-bottom:-10px;
+    background-color: #43e951;
+}
+
+
+
+/*
+   =============
+    Content
+   =============
+*/
+
+body div#main-container h2{
+         padding:10px;
+         color:#ffffff;
+         background-color:#1578e9;
+}
+
+body div#main-container ul{
+    text-align: left;
+}
+
+body div#main-container {
+    padding:10px;
+      background-color:rgb(245, 176, 27);
+}
+
+body div#main-container a{
+    color:#115db4;
+    text-decoration: none;
+}
+
+body div#main-container li
+{
+    padding: 10px;
+    margin:2px;
+    background-color:#b1abab; 
+}
+
+body div#main-container p#topicTitle{
+padding:20px;
+font-size:30px;
+margin-top:-11px;
+background-color:rgba(173, 226, 247, 0.746);
+}
+
+body div#main-container li strong{
+
+    font-size:22px;
+    color:rgba(2, 2, 2, 0.931);
+
 }

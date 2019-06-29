@@ -1,9 +1,9 @@
 var fs = require('fs');
 var http = require('http');
-var jsdom = require('./public/backend/modules/node_modules/jsdom');
-var helperModules=require('./public/backend/modules/helperModules/indexColUpdaterModule.js');
+//var jsdom = require('./public/backend/modules/node_modules/jsdom');
+//var helperModules=require('./public/backend/modules/helperModules/indexColUpdaterModule.js');
 var nStatic = require('./public/backend/modules/node_modules/node-static/lib/node-static');
-var jquery = require('./public/backend/modules/node_modules/jquery');
+//var jquery = require('./public/backend/modules/node_modules/jquery');
 var fileServer = new nStatic.Server(__dirname);
 
 var fileCache = {};
