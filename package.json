@@ -4,5 +4,8 @@
 	"scripts": {
 		"start": "node server.js"
 	},
-	"author": "Oscuro Smith"
+	"author": "Oscuro Smith",
+	"dependencies": {
+		"bootstrap": "^4.3.1"
+	}
 }
