@@ -1,19 +1,26 @@
 var fs = require('fs');
 var http = require('http');
+//var queryString = require('querystring');
+var emailjs = require('./node_modules/emailjs');
+var mailer = require('./public/backend/modules/helperModules/mailer.js');
+//var ua_ = require('./public/backend/modules/node_modules/ua-parser-js');
 //var jsdom = require('./public/backend/modules/node_modules/jsdom');
 //var helperModules=require('./public/backend/modules/helperModules/indexColUpdaterModule.js');
 var nStatic = require('./public/backend/modules/node_modules/node-static/lib/node-static');
-//var jquery = require('./public/backend/modules/node_modules/jquery');
+var jquery = require('./public/backend/modules/node_modules/jquery');
+
 var fileServer = new nStatic.Server(__dirname);
 
 var fileCache = {};
 
+var pathCache={};
 
 function loadFileSync(path) {
-    if (fileCache[path] == path) {
+    if (false) {//During Test Mode 
         return fileCache[path];
     } else {
         fileCache[path] = (fs.readFileSync(path)).toString();
+        pathCache[path]=path;
         return fileCache[path];
     }
 }
@@ -53,7 +60,26 @@ function main() {
         console.log("Requested File:" + req.url);
 
 
-        if (req.url != '/') {
+
+         if(req.url.split('?')[0]=='/subscriber'){
+         
+            
+            var email=req.url.split('?')[1].split('=')[1];
+            let e1   = email.split('%40')[0];
+            let e2   = email.split('%40')[1];
+
+            
+            var emailref=e1+'@'+e2;
+
+            mailer.sendMail_(emailref , emailjs);
+        
+            res.writeHead(200, { "Content-Type": "text/html" });
+            res.write(Home);
+           res.end();
+
+         }
+
+        else if (req.url != '/') {
 
 
             let exp = extention(req);
@@ -114,7 +140,6 @@ function main() {
 }
 
 
-//setTimeout(helperModules.updateIndex,100,fs,jsdom,jquery);
 
 setTimeout(main, 100);
 

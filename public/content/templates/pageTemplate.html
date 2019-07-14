@@ -53,7 +53,7 @@
                  function setup(){
                     let ul_ = $('nav#index li');
                     let li = $(ul_).find('a');
-                    let check = window.location.pathname.split('/')[window.location.pathname.split('/').length - 1];
+                    let check = window.location.pathname.split('/').pop();
                 
                     for (let element = 0; element < li.length; element++) {
                         if (check == li[element].getAttribute('href')) {
