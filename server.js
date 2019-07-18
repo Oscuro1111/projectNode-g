@@ -61,25 +61,24 @@ function main() {
 
 
 
-         if(req.url.split('?')[0]=='/subscriber'){
+         if(req.url.split('?')[0]=='/subscriber')//Testing
+          {
          
             
+        
             var email=req.url.split('?')[1].split('=')[1];
+
             let e1   = email.split('%40')[0];
             let e2   = email.split('%40')[1];
 
-            
             var emailref=e1+'@'+e2;
 
             mailer.sendMail_(emailref , emailjs);
-        
+            
             res.writeHead(200, { "Content-Type": "text/html" });
             res.write(Home);
            res.end();
-
-         }
-
-        else if (req.url != '/') {
+        }else if (req.url != '/') {
 
 
             let exp = extention(req);

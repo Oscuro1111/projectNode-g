@@ -14,6 +14,7 @@ module.exports.sendMail_= function( emailAddress ,emaiJs){
        from:    "sahiljarial1999@gmail.com",
        to:emailAddress,
        subject: "Welcome"
+       //,atachment:
     }, function(err, message) { console.log(err || message); });
 }
 

@@ -36,7 +36,7 @@ $(document).ready(function () {
       }
     }, 20, sync);
 
-    setTimeout(loadDocData, 3000, id);
+    setTimeout(loadDocData, 1000, id);
 
   });
 
@@ -75,4 +75,8 @@ function loadDocData(id) {
   xhttp.open("GET", "../../../serverContent/booksLoad.text", true); //Aync :true
   xhttp.send();
 
+}
+
+function loadlinks(){
+        
 }

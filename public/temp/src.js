@@ -4,4 +4,4 @@ var a =[];
 
 var i=0;
 
-for(array[i++] in array) console.log(array[i]);
+for(a[i++] in array) console.log(a[i-1]);

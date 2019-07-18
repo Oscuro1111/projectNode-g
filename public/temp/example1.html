@@ -30,9 +30,9 @@
 			<div class="dropdown-menu bg-dark" id="barlist" style="width:100%;padding:20px;font-size:20px">
 				<a class="dropdown-item" href="#" style="color:blue">Sign Up</a>
 				<div class="dropdown-divider"></div>
-				<a class="dropdown-item" href="#"  style="color:blue">Login</a>
+				<a class="dropdown-item" href="#" style="color:blue">Login</a>
 				<div class="dropdown-divider"></div>
-				<span class="dropdown-item"  style="color:blue" id='sub'>Subscribe</span>
+				<span class="dropdown-item" style="color:blue" id='sub'>Subscribe</span>
 			</div>
 		</div>
 
@@ -98,7 +98,7 @@
 					</div>
 				</div>
 			</div>
-			<a  href='./Books.html' class="btn btn-success float-right" role="button">More</a>
+			<a href='./Books.html' class="btn btn-success float-right" role="button">More</a>
 
 			<!------------------------------------------------------------------------------->
 			<div class="d-flex flex-column mt-5">
@@ -212,15 +212,16 @@
 				</li>
 			</ul>
 
-			<form class="form-inline float-right" action="/">
-				<input id='inputSub' class="form-control mr-sm-2" type="text" placeholder="xyz@email.com">
-				<button class="btn btn-success" type="submit">Subscribe</button>
+			<form id="form_" class="form-inline float-right" action="#" method="POST">
+				<input id='inputSub' class="form-control mr-sm-2" type="text" placeholder="xyz@email.com" required>
+				<button id="submit" class="btn btn-success" onclick="validate()">Subscribe</button>
 			</form>
 		</nav>
 
 		<script type="text/javascript" src="../../node_modules/bootstrapev4/js/bootstrap.js"></script>
 		<script type="text/javascript" src="../fronttend/jsSrc/barsEvent.js"></script>
 		<script type="text/javascript" src="../fronttend/jsSrc/subscribeOpt.js"></script>
+		<script type="text/javascript" src="../fronttend/jsSrc/validateEmail.js"></script>
 </body>
 
 </html>
