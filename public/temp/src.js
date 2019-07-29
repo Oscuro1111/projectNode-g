@@ -1,7 +1,19 @@
-var array ={x:1,y:2,z:3};
+$(document).ready(function() {
+	$('select#hLocationCountryID').click(function() {
+    
+		$.getJSON('./dataList.json', {}).done(function($json) {
+      //Empty any possible option find .
+			$('select#hLocationStateID').empty();
 
-var a =[];
+			$.each($json.states, function() {
+				let $split = this.split(':');
 
-var i=0;
+				$('select#hLocationStateID').append('<option value=' + $split[0] + "'>" + $split[1] + '</option>');
+			});
 
-for(a[i++] in array) console.log(a[i-1]);
+			//change label
+			$('label[for=hLocationStateID]').text($json.label + ':');
+		});
+	});
+
+});

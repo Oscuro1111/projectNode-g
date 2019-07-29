@@ -1,3 +1,5 @@
+//Author : Oscuro Smith
+
 var fs = require('fs');
 var http = require('http');
 //var queryString = require('querystring');
@@ -13,7 +15,7 @@ var fileServer = new nStatic.Server(__dirname);
 
 var fileCache = {};
 
-var pathCache={};
+var pathCache = {};
 
 function loadFileSync(path) {
     if (false) {//During Test Mode 
@@ -59,13 +61,15 @@ function main() {
 
         console.log("Requested File:" + req.url);
 
+if(extention(req)==".json"){
 
+    let data = loadFileSync(__dirname+req.url);
+    res.writeHead(200, {"Content-Type": "text/json"});
+    res.write(data);
+    res.end();
 
-         if(req.url.split('?')[0]=='/subscriber')//Testing
+}else  if(req.url.split('?')[0]=='/subscriber')//Testing
           {
-         
-            
-        
             var email=req.url.split('?')[1].split('=')[1];
 
             let e1   = email.split('%40')[0];

@@ -1,6 +1,7 @@
 //Author :Oscuro
+
 var check = 0;
-$(document).ready(function () {
+function barEventSetUp(){
 
     var bars = $('i#bars');
     
@@ -29,4 +30,4 @@ $(document).ready(function () {
     });
     
 
-});
+}
