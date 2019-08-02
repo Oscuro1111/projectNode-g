@@ -46,7 +46,6 @@ class RelaxedBody extends Transform {
                     break;
                 }
             }
-
             if (i === 0) {
                 // reached to the beginning of the chunk, check if it is still about the ending
                 // and if the remainder also matches

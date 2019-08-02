@@ -1,0 +1,44 @@
+
+
+<div class="d-flex justify-content-center">
+
+        <div class="card" style="width:300px;margin:10px;">
+            <div class="card-header">
+                Content
+            </div>
+            <div class="card-body">
+                <img src="../content//resources/lanscape3.jpg" class="card-img-top" alt="LandscapeOne">
+                <h5 class="card-title">Land Scape</h5>
+                <p class="card-text">Landscape One</p>
+            </div>
+        </div>
+        <div class="card" style="width:300px;margin:10px;">
+            <div class="card-header">
+                Content
+            </div>
+            <div class="card-body">
+                <img src="../content//resources/lanscape3.jpg" class="card-img-top" alt="LandscapeOne">
+                <h5 class="card-title">Land Scape</h5>
+                <p class="card-text">Landscape One</p>
+            </div>
+        </div>
+
+
+        <div class="card" style="width:300px;margin:10px;">
+            <div class="card-header">
+                Content
+            </div>
+            <div class="card-body">
+                <img src="../content//resources/lanscape3.jpg" class="card-img-top" alt="LandscapeOne">
+                <h5 class="card-title">Land Scape</h5>
+                <p class="card-text">Landscape One</p>
+            </div>
+        </div>
+    </div>
+
+
+    <br/>
+<br/>
+<br/>
+<br/>
+

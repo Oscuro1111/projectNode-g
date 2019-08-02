@@ -125,6 +125,7 @@ ul > li {
     font-size: 20px;
     padding:5px;
 }
+
 ul {
 	background-color: #4a4a4f;
 }
@@ -156,21 +157,24 @@ ul{
 }
 
 img{
-    margin-left: 25%;
+    margin-left: 10%;
 }
+
 p{
     display:block;
     text-align: justify;
-    padding:5px;
+	padding:5px;
+
 }
 
 div#main-container{
 	background: #d1e1ee;
 }
+
 strong,b{
-	margin:13px;
-	background-color:#95aadd; 
+	margin:13px; 
 }
+
 div#sideBar{
   display:none;
 }
