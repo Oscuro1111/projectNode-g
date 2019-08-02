@@ -1,0 +1,238 @@
+*{ box-sizing: content-box;}
+
+
+header {
+    background-color: rgba(68, 255, 93, 0.938);
+}
+
+div#main-container{
+    background-color:rgb(216, 214, 214);
+}
+
+div#sideBar{
+    background-color:rgb(166, 171, 175);
+}
+
+footer{
+    color:rgb(248, 244, 244);
+    
+    background-color:rgba(3, 2, 3, 0.849);
+}
+
+
+
+/*Body Defaults*/
+
+body{
+     
+     min-height:100vh;
+     text-align: center;
+     padding:0;
+     margin :0;
+  
+}
+
+
+/*
+ ==========
+ =   Grids  = 
+ ==========
+*/
+
+
+body{
+    display:grid;
+}
+
+header{
+ grid-row:1;
+ grid-column:1/4;
+}
+
+footer{
+  grid-row:30;
+  grid-column:1/4;     
+}
+
+/*
+  ================
+  Manuplating Grid
+  =================
+*/
+
+
+div#main-container{
+    width:100%;
+    margin-left:0;
+    grid-area:3/1/30/4; 
+    overflow:scroll; 
+}
+
+div#sideBar{
+    width:300px;
+    overflow: scroll;
+    grid-area:3/1/30/2;
+}
+
+
+/*
+ ===================
+  Content Formatting
+ ===================
+*/
+
+
+div#main-container,div#sideBar{
+    text-align: center;
+}
+
+/*
+==================
+ content List Style
+==================
+*/
+
+span#contentList{
+   grid-area:2/1/2/4; 
+}
+
+span#contentList{
+    padding-top:10px;
+    text-align:left;
+    color:rgba(11, 15, 12, 0.959);
+    background-color:rgb(76, 188, 253);
+}
+
+em{
+    margin-left:10px;
+}
+
+nav#index a{
+    padding:5px;
+    font-size:19px;
+    text-decoration:none;
+}
+
+
+nav#index a:hover{
+   background-color: rgb(132, 236, 118);
+}
+
+
+nav#index{
+    text-align: left;
+    list-style-type: none; 
+}
+
+
+div#sideBar{
+    display: none;
+}
+
+
+
+em#reset{
+    cursor: pointer;
+}
+
+div#sideBar{
+    display:inline-block;
+}
+
+ span#content_{
+    font-size:25px;
+    padding:5px;
+    width:100%;
+    font-family: sans-serif;
+}
+center{
+    padding:10px;
+    box-shadow:2px 2px 2px 2px #b1abab; 
+    background-color:rgb(59, 135, 235);
+}
+
+nav#index ul li{
+    padding:10px;
+}
+
+h3 span#title{
+    background-color:#5adfdf; 
+    
+}
+div>h3{
+    border:3px solid #696d6d;
+     background: #5cd4d4;
+     margin-top:-7px;
+     padding:10px;
+}
+
+div#sideBar{
+color:#ffffff;
+background-color:#a805c5; 
+}
+
+div#sideBar a{
+    color:#fff;
+}
+
+
+
+
+p#Author{
+    box-sizing: content-box;
+    width:500px;
+    padding:10px;
+    
+    margin-top:-33px;
+    margin-bottom:-10px;
+    background-color: #43e951;
+}
+
+
+
+/*
+   =============
+    Content
+   =============
+*/
+ 
+body div#main-container h2{
+         padding:10px;
+         color:#ffffff;
+         background-color:#1578e9;
+}
+
+body div#main-container ul{
+    text-align: left;
+}
+
+body div#main-container {
+    padding:10px;
+      background-color:rgb(245, 176, 27);
+}
+
+body div#main-container a{
+    color:#115db4;
+    text-decoration: none;
+}
+
+body div#main-container li
+{
+    padding: 10px;
+    margin:2px;
+    background-color:#b1abab; 
+}
+
+body div#main-container p#topicTitle{
+padding:20px;
+font-size:30px;
+margin-top:-11px;
+background-color:rgba(173, 226, 247, 0.746);
+}
+
+body div#main-container li strong{
+
+    font-size:22px;
+    color:rgba(2, 2, 2, 0.931);
+
+}

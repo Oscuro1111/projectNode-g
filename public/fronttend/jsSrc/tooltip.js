@@ -1,0 +1,1 @@
+$('span#tooltip').css({"display":"none"});
