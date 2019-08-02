@@ -2,10 +2,23 @@
 
 var itemPrevClicked=[];
 
+function makeID($topicName){
+		var id="";   
+	let arr=$topicName.split(" ");
+
+	for(let i = 0; i<arr.length;i++){
+		id+=arr[i];
+	}
+	return id;
+}
+
+
 function loadList(jsonPro, uli,topicName) {
 	let i;
-	$(uli).append("<li class='list-group-item'><span id='"+topicName+"' class='card-header'>"+topicName+"</span></li>");
-	$(("div#List li span#"+topicName)).css({"background-color":"#7615f5","color":"white","font-size":"19px"});
+	let id=makeID(topicName);
+	console.log("ok done! sad:/");
+	$(uli).append("<li class='list-group-item'><span id='"+id+"' class='card-header'>"+topicName+"</span></li>");
+	$(("div#List li span#"+id)).css({"background-color":"#7615f5","color":"white","font-size":"19px"});
 	for (i = 0; i < jsonPro.length; i++){
 		let temp = jsonPro[i].split(':');
 		$(uli).append("<li class='list-group-item'><a href='" + "javascript:void(0)'" + " name='" + temp[1] + "'>" + temp[0] + '</a></li>');
@@ -46,7 +59,7 @@ function listLoader(container) {
 					color: 'black',
 				})
 				.on('click', function() {
-					//loadTopicData(container, this);
+					//loadTopicData(container, this); //for testing resons only
 					if(itemPrevClicked[0]){
 						$(itemPrevClicked[0]).removeClass("list-group-item active").addClass("list-group-items");
 						itemPrevClicked.pop();           

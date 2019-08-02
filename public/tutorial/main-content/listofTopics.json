@@ -1,7 +1,11 @@
 {
-    "MemoryTopics":[
-        
+    "Memory":[
         "Memory:./main-content/memory-1.html",
         "Memory-Devices:./main-content/memory-devices-2.html" 
+    ],
+    "Programming in C":[
+        "Introduction:#",
+        "variables:#",
+        "while loop:#"
     ]
 }

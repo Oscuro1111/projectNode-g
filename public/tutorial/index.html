@@ -21,12 +21,12 @@
 </head>
 
 <body>
-    <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-between sticky-top">
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-between sticky-top" id="headerNav">
         <div class="dropdown">
             <style>
-                i#bars:hover{
-                       background-color:lightgreen;
-                       cursor: pointer; 
+                i#bars:hover {
+                    background-color: lightgreen;
+                    cursor: pointer;
                 }
             </style>
             <i id="bars" class="fas fa-bars dropdown-toggle" data-toggle="dropdown"
@@ -44,36 +44,45 @@
 
         <i class="fas fa-dragon" style="font-size:50px;color:white;"><span
                 style="font-size:40px;margin-left:13px;">Oscuro Web</span></i>
-        <form class="form-inline" action="/">
-            <input class="form-control mr-sm-2" type="text" placeholder="Search">
-            <button class="btn btn-success" type="submit">Search</button>
+        <form class="form-inline" action="javascript:void(0)">
+            <input class="form-control mr-sm-2" type="text" onkeyup="Search()" list="dList" placeholder="Search"
+                id="bar" required>
+            <button class="btn btn-success" id="searchBtn" type="submit" onclick="find()">Search</button>
         </form>
     </nav>
-<style>
-   @media screen and (max-width:755){
-    #headerImg{
-          width:100%;
-          font-size:20px;
-    }
-    div.main-content{
-        width:100%;
-     }
-   }
-    </style>
-<div class="d-flex justify-content-center" style="padding:10px; background-image:url('../content/resources/codinghell1.jpg')" id="headerimg">
-    <div class="card-header">
-      <h1 style="color:aliceblue;">Tutorial Hell</h1>
-    </div>
-</div>
-<nav class="nav" style="background-color: blueviolet; padding:10px;">
-    <li class="nav-item" id="">
-        <a class="nav-link" id="contentItem" href="#" style="background-color: aliceblue; color:black;">content</a>
-    </li>
-</nav>
 
-        <div class="row">
-            <div class="columns-sm-6" id="List" style="overflow: scroll">
-           <div class="d-flex flex-column ml-2 mr-5 p-1" style="width:100%">
+
+
+    <datalist id="dList">
+
+    </datalist>
+    <style>
+        @media screen and (max-width:755) {
+            #headerImg {
+                width: 100%;
+                font-size: 20px;
+            }
+
+            div.main-content {
+                width: 100%;
+            }
+        }
+    </style>
+    <div class="d-flex justify-content-center"
+        style="padding:10px; background-image:url('../content/resources/codinghell1.jpg')" id="headerimg">
+        <div class="card-header">
+            <h1 style="color:aliceblue;">Tutorial Hell</h1>
+        </div>
+    </div>
+    <nav class="nav" style="background-color: blueviolet; padding:10px;">
+        <li class="nav-item" id="">
+            <a class="nav-link" id="contentItem" href="#" style="background-color: aliceblue; color:black;">content</a>
+        </li>
+    </nav>
+
+    <div class="row">
+        <div class="columns-sm-6" id="List" style="overflow: scroll">
+            <div class="d-flex flex-column ml-2 mr-5 p-1" style="width:100%">
                 <ul class="list-group">
                     <li class="list-group-item"><a href="#">TexA</a></li>
                     <li class="list-group-item"><a href="#">TexA</a></li>
@@ -91,48 +100,61 @@
                     <li class="list-group-item"><a href="#">TexA</a></li>
                     <li class="list-group-item"><a href="#">TexA</a></li>
                 </ul>
-           </div>
-            </div>
-            <div class="columns-sm-8" id="main-container">
-              <div class="container jumbotron ">
-                 <div class="main-content">
-                    
-                 </div>
-              </div>
             </div>
         </div>
-        <div class="row">
-         <div id="OtherTopics">
-           <ul class="list-group">
-           </ul>
-         </div>
+        <div class="columns-sm-8" id="main-container">
+            <div class="container jumbotron ">
+                <div class="main-content">
+
+                </div>
+            </div>
         </div>
-
-        <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-between" style="position:fixed;bottom:0px; width:100%">
-            <a class="navbar-brand" href="#"><i class="fas fa-dragon" style="color:white;font-size:30px;"></i></a>
-
-            <ul class="navbar-nav" style="font-size:18px">
-                <li class="nav-item">
-                    <a class="nav-link" href="#">About Us</a>
-                </li>
-                <span style="padding:4px;color:rgb(172, 158, 158)">|</span>
-                <li class="nav-item">
-                    <a class="nav-link" href="#">feedback</a>
-                </li>
+    </div>
+    <div class="row">
+        <div id="OtherTopics">
+            <ul class="list-group">
             </ul>
+        </div>
+    </div>
+    <style>
+        @media screen and (max-width:300) {
+            #footerNav {
+                height: 10%;
+                font-size: 10px;
+            }
 
-            <form class="form-inline float-right" action="/subscriber">
-                <input id='inputSub' class="form-control mr-sm-2" type="text" name="email" placeholder="xyz@email.com" required>
-                <button class="btn btn-success" type="submit">Subscribe</button>
-            </form>
-        </nav>
+        }
+    </style>
+    <nav class="navbar navbar-expand-sm bg-dark navbar-dark d-flex justify-content-between"
+        style="position:relative;bottom:0px;width:100%" id="footerNav">
+        <a class="navbar-brand" href="#"><i class="fas fa-dragon" style="color:white;font-size:30px;"></i></a>
 
-        <script type="text/javascript" src="../../node_modules/bootstrapev4/js/bootstrap.js"></script>
-        <script type="text/javascript" src="../fronttend/jsSrc/barsEvent.js"></script>
-        <script type="text/javascript" src="../fronttend/jsSrc/subscribeOpt.js"></script>
-        <script type="text/javascript" src="./loadData.js"></script>
-        <script type="text/javascript" src="./src.js"></script>
-        <script type="text/javascript" src="./content-list-event.js"></script>
-        <script typr="text/javascript" src="./main.js"></script>
+        <ul class="navbar-nav" style="font-size:18px">
+            <li class="nav-item">
+                <a class="nav-link" href="#">About Us</a>
+            </li>
+            <span style="padding:4px;color:rgb(172, 158, 158)">|</span>
+            <li class="nav-item">
+                <a class="nav-link" href="#">feedback</a>
+            </li>
+        </ul>
+
+        <form id="form_" class="form-inline float-right" action="#" method="POST">
+            <input id='inputSub' class="form-control mr-sm-2" type="text" placeholder="xyz@email.com" required>
+            <button id="submit" class="btn btn-success" onclick="validate()">Subscribe</button>
+        </form>
+    </nav>
+    <script type="text/javascript" src="../../node_modules/bootstrapev4/js/bootstrap.js"></script>
+    <script type="text/javascript" src="../fronttend/jsSrc/barsEvent.js"></script>
+    <script type="text/javascript" src="../fronttend/jsSrc/subscribeOpt.js"></script>
+    <script type="text/javascript" src="./loadData.js"></script>
+    <script type="text/javascript" src="./src.js"></script>
+    <script type="text/javascript" src="./content-list-event.js"></script>
+    <script typr="text/javascript" src="./searchBar.js"></script>
+    <script typr="text/javascript" src="./findData.js"></script>
+    <script typr="text/javascript" src="./main.js"></script>
+    <script typr="text/javascript" src="../fronttend/jsSrc/validateEmail.js"></script>
+
 </body>
+
 </html>
