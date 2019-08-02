@@ -9,7 +9,9 @@ function find() {
         $.each(aList, function () {
             if (this.innerText.toUpperCase().indexOf(fillter_) > -1) {
                 $(container).append("<li class='card-link'><a href='"+this.href+"' name='"+this.name+"'>"+this.innerText+"</a></li></div>");
+            
             }
+
         });
 
         $.each($(container).find("a") ,function(){
@@ -17,6 +19,11 @@ function find() {
                 $event.preventDefault();
                 loadTopicData(container , this);
             });
+            
+                   if(switchclass[0]!=true){
+                           $("a#contentItem").click();
+                   }
+            
         });
     }
 }
