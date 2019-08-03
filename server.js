@@ -2,20 +2,20 @@
 
 var fs = require('fs');
 var http = require('http');
+var {parse} = require('./node_modules/querystring');
 //var queryString = require('querystring');
 var emailjs = require('./node_modules/emailjs');
-var mailer = require('./public/backend/modules/helperModules/mailer.js');
+var mailer  = require('./public/backend/modules/helperModules/mailer.js');
 //var ua_ = require('./public/backend/modules/node_modules/ua-parser-js');
 //var jsdom = require('./public/backend/modules/node_modules/jsdom');
-//var helperModules=require('./public/backend/modules/helperModules/indexColUpdaterModule.js');
-var nStatic = require('./public/backend/modules/node_modules/node-static/lib/node-static');
-var jquery = require('./public/backend/modules/node_modules/jquery');
+var nStatic    = require('./public/backend/modules/node_modules/node-static/lib/node-static');
+//var jquery = require('./public/backend/modules/node_modules/jquery')
 
 var fileServer = new nStatic.Server(__dirname);
 
-var fileCache = {};
+var fileCache  = {};
 
-var pathCache = {};
+var pathCache  = {};
 
 function loadFileSync(path) {
     if (false) {//During Test Mode 
@@ -60,8 +60,17 @@ function main() {
     http.createServer(function (req, res) {
 
         console.log("Requested File:" + req.url);
-
-if(extention(req)==".json"){
+if(req.url=='/feedback'){
+    let body='';
+           req.on('data' , function(chunk){
+               body+=chunk.toString();
+                console.log(parse(body));
+           });        
+           res.writeHead(200,{"Content-Type":"text/html"});
+           res.write(loadFileSync(__dirname+"/index.html"));
+           res.end();
+}
+else if(extention(req)==".json"){
 
     let data = loadFileSync(__dirname+req.url);
     res.writeHead(200, {"Content-Type": "text/json"});

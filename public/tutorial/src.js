@@ -16,7 +16,6 @@ function makeID($topicName){
 function loadList(jsonPro, uli,topicName) {
 	let i;
 	let id=makeID(topicName);
-	console.log("ok done! sad:/");
 	$(uli).append("<li class='list-group-item'><span id='"+id+"' class='card-header'>"+topicName+"</span></li>");
 	$(("div#List li span#"+id)).css({"background-color":"#7615f5","color":"white","font-size":"19px"});
 	for (i = 0; i < jsonPro.length; i++){

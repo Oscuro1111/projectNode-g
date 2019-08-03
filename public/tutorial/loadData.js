@@ -3,3 +3,9 @@ function loadTopicData(container, listItem) {
               container[0].innerHTML = data;
        }, 'html');
 }
+
+function loadFooterData(container,path) {
+       $.get(path, {}).done(function (data) {
+              container[0].innerHTML = data;
+       }, 'html');
+}
