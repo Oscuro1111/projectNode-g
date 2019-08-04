@@ -1,9 +1,14 @@
 <div class="form-group">
-    <form action="javascript:void(0)" method="post">
+    <form action="/feedback" method="post" id="form_2">
     <label for="uMail">Email:</label>
     <input id="uMail" type="email" name="remail" class="form-control mr-sm-2" required><br>
     <label for="my-textarea">FeedBack:</label>
     <textarea id="my-textarea" class="form-control" name="feedBack" rows="3" required></textarea><br>
-    <input type="submit" class="btn btn-success" value="Send">
+    <input type="submit" class="btn btn-success" value="Send" onclick="send()">
     </form>
+    <script>
+        function send(){
+            $("form#form_2").attr({"äction":"/feedback"}).submit();
+        }
+    </script>
 </div>

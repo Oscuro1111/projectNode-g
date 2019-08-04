@@ -10,12 +10,19 @@ var mailer  = require('./public/backend/modules/helperModules/mailer.js');
 //var jsdom = require('./public/backend/modules/node_modules/jsdom');
 var nStatic    = require('./public/backend/modules/node_modules/node-static/lib/node-static');
 //var jquery = require('./public/backend/modules/node_modules/jquery')
-
+var mysql=(require("./node_modules/mysql"));
+var dataBase = require("./public/tutorial/Database-feedbacks/connecting-database.js");
+var DB= require("./public/tutorial/Database-feedbacks/setUpDB.js");
+var checkTable  = require("./public/tutorial/Database-feedbacks/checkNewTables.js");
 var fileServer = new nStatic.Server(__dirname);
+
+
 
 var fileCache  = {};
 
 var pathCache  = {};
+
+var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);
 
 function loadFileSync(path) {
     if (false) {//During Test Mode 
@@ -64,7 +71,13 @@ if(req.url=='/feedback'){
     let body='';
            req.on('data' , function(chunk){
                body+=chunk.toString();
-                console.log(parse(body));
+
+
+                console.log(parse(body));//store
+
+// data base storing work
+
+
            });        
            res.writeHead(200,{"Content-Type":"text/html"});
            res.write(loadFileSync(__dirname+"/index.html"));
@@ -153,6 +166,6 @@ else if(extention(req)==".json"){
 
 
 
-setTimeout(main, 100);
+setTimeout(main, 1000);
 
 
