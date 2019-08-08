@@ -22,7 +22,7 @@ var fileCache  = {};
 
 var pathCache  = {};
 
-//var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);
+var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);
 
 function loadFileSync(path) {
     if (false) {//During Test Mode 
