@@ -4,7 +4,7 @@ var fs = require('fs');
 var http = require('http');
 var {parse} = require('./node_modules/querystring');
 //var queryString = require('querystring');
-var emailjs = require('./node_modules/emailjs');
+var emailjs = require('./node_modules/nodemailer');
 var mailer  = require('./public/backend/modules/helperModules/mailer.js');
 //var ua_ = require('./public/backend/modules/node_modules/ua-parser-js');
 //var jsdom = require('./public/backend/modules/node_modules/jsdom');
@@ -22,7 +22,7 @@ var fileCache  = {};
 
 var pathCache  = {};
 
-var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);
+//var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);
 
 function loadFileSync(path) {
     if (false) {//During Test Mode 
@@ -103,7 +103,7 @@ else if(extention(req)==".json"){
             
             res.writeHead(200, { "Content-Type": "text/html" });
             res.write(Home);
-           res.end();
+            res.end();
         }else if (req.url != '/') {
 
 
