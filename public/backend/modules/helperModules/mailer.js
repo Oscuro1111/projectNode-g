@@ -10,12 +10,11 @@ module.exports.sendMail_= function( emailAddress, nodemailer){
 });
 
 var email=w(emailAddress);
-console.log(email);
 const message = {
     from: 'sahiljarial1999@gmail.com', // Sender address
     to:email  ,         // List of recipients
-    subject: 'Design Your Model S | Tesla', // Subject line
-    text: 'Have the most fun you can in a car. Get your Tesla today!' // Plain text body
+    subject: 'Welcome', // Subject line
+    text: 'Welcome to Oscuro Web you just subscribed to our website!!' // Plain text body
 };
 console.log("eamil:"+emailAddress);
 transport.sendMail(message, function(err, info) {
