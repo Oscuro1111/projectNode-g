@@ -32,8 +32,10 @@ function updateTableRecord(fs, data) {
 function createTable(db, name) {
 	var sqlQuery =
 		'CREATE TABLE ' +
-		name +
-		' (id INT  AUTO_INCREMENT PRIMARY KEY,email VARCHAR(255) ,address VARCHAR(255),feedback VARCHAR(1000))';
+			name +
+		 '(id INT  AUTO_INCREMENT PRIMARY KEY,email VARCHAR(255) ,feedback VARCHAR(1000))';
+
+		//var sqlQuery2="DROP TABLE "+name;
 	db.query(sqlQuery, function(err, result) {
 		if (err) {
 			throw err;

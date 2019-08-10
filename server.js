@@ -14,6 +14,7 @@ var mysql=(require("./node_modules/mysql"));
 var dataBase = require("./public/tutorial/Database-feedbacks/connecting-database.js");
 var DB= require("./public/tutorial/Database-feedbacks/setUpDB.js");
 var checkTable  = require("./public/tutorial/Database-feedbacks/checkNewTables.js");
+var fdbOperations = require("./public/tutorial/Database-feedbacks/dataBaseOperations.js");
 var fileServer = new nStatic.Server(__dirname);
 
 
@@ -22,7 +23,7 @@ var fileCache  = {};
 
 var pathCache  = {};
 
-var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);
+var dbQuery =DB.setUpDB(dataBase,mysql,fs,checkTable);//Query Object
 
 function loadFileSync(path) {
     if (false) {//During Test Mode 
@@ -63,6 +64,8 @@ var PORT = process.env.PORT||8080;
 
 function main() {
 
+
+     var feedBackHandler=new fdbOperations.QueryfeedBackOpertations(dbQuery);
     console.log(" Server status:Running..." + "\nhost:localhost on Port:"+PORT);
     http.createServer(function (req, res) {
 
@@ -72,12 +75,10 @@ if(req.url=='/feedback'){
            req.on('data' , function(chunk){
                body+=chunk.toString();
 
-
                 console.log(parse(body));//store
 
-// data base storing work
-
-
+                // data base storing work
+          feedBackHandler.insertdata(parse(body));
            });        
            res.writeHead(200,{"Content-Type":"text/html"});
            res.write(loadFileSync(__dirname+"/index.html"));

@@ -2,7 +2,7 @@
     "oscurodb": {
         "Tables": [{
             "name": "userFeedback",
-            "created": true 
+            "created": true
         }]
     }
 }
