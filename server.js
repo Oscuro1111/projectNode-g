@@ -62,15 +62,36 @@ fs.readFile("./index.html", function (err, data) {
 var PORT = process.env.PORT||8080;
 
 
+
+
 function main() {
 
+    var feedBackHandler=new fdbOperations.QueryfeedBackOpertations(dbQuery);
 
-     var feedBackHandler=new fdbOperations.QueryfeedBackOpertations(dbQuery);
     console.log(" Server status:Running..." + "\nhost:localhost on Port:"+PORT);
     http.createServer(function (req, res) {
 
         console.log("Requested File:" + req.url);
-if(req.url=='/feedback'){
+
+if(req.url=="/userFeedBacks"){
+       fdbOperations.getFeedBacks(fs ,feedBackHandler.queryExecuter);
+
+       setTimeout(function(){
+
+        var data=loadFileSync(__dirname+"/public/tutorial/Database-feedbacks/userFeedbacks.html");
+           res.writeHead(200,{"Content-Type":"text/html"});
+           console.log("Executing");
+           res.write(data);
+           console.log("Executing");
+          
+           res.end();
+           console.log("Executing");
+
+       },1000);
+
+
+
+}else if(req.url=='/feedback'){
     let body='';
            req.on('data' , function(chunk){
                body+=chunk.toString();
