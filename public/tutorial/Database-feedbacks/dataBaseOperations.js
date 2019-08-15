@@ -51,7 +51,7 @@ module.exports.getFeedBacks = function (fs, queryExecuter_) {
                     '</div>' +
                     "<div id='collapseOne' class='collapse show' data-parent='#accordion'>" +
                     "<div class='card-body'>" +
-                    "<span class='card-header bg-success'>FeedBack:</span>" + results[i].feedback +
+                    "<span style='padding:2px; font-size:20px; color:green;background-color:lightblue;'>FeedBack:</span>" + results[i].feedback +
                     '</div>' +
                     '</div>' +
                     '</div>';
@@ -63,7 +63,7 @@ module.exports.getFeedBacks = function (fs, queryExecuter_) {
                 if (err) {
                     console.log('WARNING:Failed to append data!!');
                 } else {
-                    console.log('Data Append operation completed with 0 error.');
+                    console.log('Data Written operation completed with 0 error.');
                 }
             });
         }

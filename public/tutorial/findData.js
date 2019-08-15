@@ -1,4 +1,8 @@
 function find() {
+    if(fCheck===true){
+        $("div.accordion").detach();
+        fCheck=false;
+         }
     let data = $("input#bar").val();
     let fillter_ = data.toUpperCase();
 

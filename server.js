@@ -74,6 +74,7 @@ function main() {
         console.log("Requested File:" + req.url);
 
 if(req.url=="/userFeedBacks"){
+    
        fdbOperations.getFeedBacks(fs ,feedBackHandler.queryExecuter);
 
        setTimeout(function(){
@@ -102,7 +103,7 @@ if(req.url=="/userFeedBacks"){
           feedBackHandler.insertdata(parse(body));
            });        
            res.writeHead(200,{"Content-Type":"text/html"});
-           res.write(loadFileSync(__dirname+"/index.html"));
+           res.write(loadFileSync(__dirname+"/public/tutorial/greetingFeedBack.html"));
            res.end();
 }
 else if(extention(req)==".json"){
