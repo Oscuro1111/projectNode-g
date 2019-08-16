@@ -34,26 +34,63 @@
 						background-color: lightgreen;
 						cursor: pointer;
 					}
+				 
+
+					i span{
+
+						font-size:180%;
+						color:white ;
+						margin-left: 13px; 
+					}
+					i#bar span{
+						font-size: 160%;
+						color:white;
+						 padding:20px;
+						
+					}
+
+					@media screen and (max-width: 755){
+						i span{
+							font-size:100%;
+						    color:white ;
+						    margin-left: 13px; 
+						}
+
+				     i#bar span{
+						 font-size:50%;
+						 color:white;
+						 padding:5px;
+					 }
+					}
+				
 				</style>
 				<i
 					id="bars"
 					class="fas fa-bars dropdown-toggle"
 					data-toggle="dropdown"
-					style="color:white;padding:20px;font-size:25px;"
+					style="color:white;"
 				>
 					<span style="margin-left:5px">Menu</span></i
 				>
                  
 				<div class="dropdown-menu bg-dark" id="barlist" style="width:100%;padding:20px;font-size:20px">
-		
+						<li class="nav-item">
+								<a class="nav-link" href="javascript:void(0)" onclick="loadAboutUsPage()">About Us</a>
+							</li>
+							 <li class="dropdown-divider"></li>
+							<li class="nav-item">
+								<a class="nav-link" href="javascript:void(0)" onclick="loadFeedBackPage()">feedback</a>
+							</li>
+							<li class="dropdown-divider"></li>
+
 					<span class="dropdown-item" style="color:blue" id="sub">Subscribe</span>
 				</div>
 			</div>
 
-			<i class="fas fa-dragon" style="font-size:50px;color:white;"
-				><span style="font-size:40px;margin-left:13px;">Oscuro Web</span></i
+			<i class="fas fa-dragon" style="font-size:100%;color:white;"
+				><span>Oscuro Web</span></i
 			>
-			<button type="submit" name="commit" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#login">
+			<button type="submit" name="commit" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#login" id="logbtn">
 				<h5>Login/Signup</h5>
 			  </button>
 			<form class="form-inline" action="javascript:void(0)">
@@ -233,17 +270,13 @@
 			style="position:relative;bottom:0px;width:100%"
 			id="footerNav"
 		>
+
+		 <style>
+		
+		 </style>
 			<a class="navbar-brand" href="#"><i class="fas fa-dragon" style="color:white;font-size:30px;"></i></a>
 
-			<ul class="navbar-nav" style="font-size:18px">
-				<li class="nav-item">
-					<a class="nav-link" href="javascript:void(0)" onclick="loadAboutUsPage()">About Us</a>
-				</li>
-				<span style="padding:4px;color:rgb(172, 158, 158)">|</span>
-				<li class="nav-item">
-					<a class="nav-link" href="javascript:void(0)" onclick="loadFeedBackPage()">feedback</a>
-				</li>
-			</ul>
+			
 
 			<form id="form_" class="form-inline float-right" action="#" method="POST">
 				<input id="inputSub" class="form-control mr-sm-2" type="text" placeholder="xyz@email.com" required />
