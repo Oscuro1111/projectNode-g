@@ -1,11 +1,12 @@
 var fCheck = false;
-
+var response = false;
 $(document).ready(function(){
     barEventSetUp();
     subscriberEventSetup();
     setUpScreen();
     setSearchBar();
     loadData();
+    console.log("Value::::::::::::--->>"+response);
 
     $(this).ajaxSend(function($event){
          if(fCheck===true){

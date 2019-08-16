@@ -43,12 +43,9 @@
 				>
 					<span style="margin-left:5px">Menu</span></i
 				>
-
+                 
 				<div class="dropdown-menu bg-dark" id="barlist" style="width:100%;padding:20px;font-size:20px">
-					<a class="dropdown-item" href="#" style="color:blue">Sign Up</a>
-					<div class="dropdown-divider"></div>
-					<a class="dropdown-item" href="#" style="color:blue">Login</a>
-					<div class="dropdown-divider"></div>
+		
 					<span class="dropdown-item" style="color:blue" id="sub">Subscribe</span>
 				</div>
 			</div>
@@ -56,6 +53,9 @@
 			<i class="fas fa-dragon" style="font-size:50px;color:white;"
 				><span style="font-size:40px;margin-left:13px;">Oscuro Web</span></i
 			>
+			<button type="submit" name="commit" class="btn btn-outline-primary btn-sm" data-toggle="modal" data-target="#login">
+				<h5>Login/Signup</h5>
+			  </button>
 			<form class="form-inline" action="javascript:void(0)">
 				<input
 					class="form-control mr-sm-2"
@@ -71,6 +71,93 @@
 		</nav>
 
 		<datalist id="dList"> </datalist>
+
+
+
+		<div class="modal fade" id="login" role="dialog">
+			<div class="modal-dialog modal-md">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h4 class="modal-title">Login</h4>
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				  <div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="inputGroup-sizing-sm">
+						<i class="fa fa-envelope"></i>
+					  </span>
+					</div>
+					<input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="inputGroup-sizing-sm">
+						<i class="fa fa-lock"></i>
+					  </span>
+					</div>
+					<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+				  </div>
+				  <button type="submit" name="commit" class="btn btn-primary btn-lg btn-block">
+					<span>Login <i class="fa fa-sign-in"></i></span>
+				  </button>
+				  <div class="text-center">
+					<a class="" href="" data-dismiss="modal" data-toggle="modal" data-target="#signup">Signup</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
+		  <div class="modal fade" id="signup" role="dialog">
+			<div class="modal-dialog modal-md">
+			  <div class="modal-content">
+				<div class="modal-header">
+				  <h4 class="modal-title">Signup</h4>
+				  <button type="button" class="close" data-dismiss="modal">&times;</button>
+				</div>
+				<div class="modal-body">
+				  <div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="inputGroup-sizing-sm">
+						<i class="fa fa-user"></i>
+					  </span>
+					</div>
+					<input type="text" class="form-control" placeholder="Name" aria-label="Name" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="inputGroup-sizing-sm">
+						<i class="fa fa-envelope"></i>
+					  </span>
+					</div>
+					<input type="text" class="form-control" placeholder="Email" aria-label="Email" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="inputGroup-sizing-sm">
+						<i class="fa fa-lock"></i>
+					  </span>
+					</div>
+					<input type="password" class="form-control" placeholder="Password" aria-label="Password" aria-describedby="basic-addon1">
+				  </div>
+				  <div class="input-group mb-3">
+					<div class="input-group-prepend">
+					  <span class="input-group-text" id="inputGroup-sizing-sm">
+						<i class="fa fa-lock"></i>
+					  </span>
+					</div>
+					<input type="text" class="form-control" placeholder="Password confirmation" aria-label="Password confirmation" aria-describedby="basic-addon1">
+				  </div>
+				  <button type="submit" name="commit" class="btn btn-primary btn-lg btn-block">
+					<span>Signup <i class="fa fa-sign-in"></i></span>
+				  </button>
+				  <div class="text-center">
+					<a class="" href="" data-dismiss="modal" data-toggle="modal" data-target="#login">Login</a>
+				  </div>
+				</div>
+			  </div>
+			</div>
+		  </div>
 		<style>
 			@media screen and (max-width: 755) {
 				#headerImg {
@@ -126,7 +213,9 @@
 				<div class="container jumbotron">
 					<div class="main-content"></div>
 
-					<div class="row" id="bottom-container" style="overflow:scroll;"></div>
+					<div class="row" id="bottom-container">
+					
+					</div>
 				</div>
 			</div>
 		</div>
@@ -167,9 +256,9 @@
 		<script type="text/javascript" src="./loadData.js"></script>
 		<script type="text/javascript" src="./src.js"></script>
 		<script type="text/javascript" src="./content-list-event.js"></script>
-		<script typr="text/javascript" src="./searchBar.js"></script>
-		<script typr="text/javascript" src="./findData.js"></script>
-		<script typr="text/javascript" src="./main.js"></script>
-		<script typr="text/javascript" src="../fronttend/jsSrc/validateEmail.js"></script>
+		<script type="text/javascript" src="./searchBar.js"></script>
+		<script type="text/javascript" src="./findData.js"></script>
+		<script type="text/javascript" src="./main.js"></script>
+		<script type="text/javascript" src="../fronttend/jsSrc/validateEmail.js"></script>
 	</body>
 </html>

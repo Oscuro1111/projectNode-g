@@ -72,8 +72,13 @@ function main() {
     http.createServer(function (req, res) {
 
         console.log("Requested File:" + req.url);
+if(req.url=="/responseFeedback"){
+    res.writeHead(200,{"Content-Type":"text/html"});
+    res.write(loadFileSync(__dirname+"/responseRef.html"));
 
-if(req.url=="/userFeedBacks"){
+    res.end();
+}
+else if(req.url=="/userFeedBacks"){
     
        fdbOperations.getFeedBacks(fs ,feedBackHandler.queryExecuter);
 
@@ -81,12 +86,9 @@ if(req.url=="/userFeedBacks"){
 
         var data=loadFileSync(__dirname+"/public/tutorial/Database-feedbacks/userFeedbacks.html");
            res.writeHead(200,{"Content-Type":"text/html"});
-           console.log("Executing");
            res.write(data);
-           console.log("Executing");
           
            res.end();
-           console.log("Executing");
 
        },1000);
 
@@ -100,10 +102,10 @@ if(req.url=="/userFeedBacks"){
                 console.log(parse(body));//store
 
                 // data base storing work
-          feedBackHandler.insertdata(parse(body));
+          feedBackHandler.insertdata(parse(body)); //During Testing Mode
            });        
            res.writeHead(200,{"Content-Type":"text/html"});
-           res.write(loadFileSync(__dirname+"/public/tutorial/greetingFeedBack.html"));
+           res.write(loadFileSync(__dirname+"/responseRef.html"));
            res.end();
 }
 else if(extention(req)==".json"){
